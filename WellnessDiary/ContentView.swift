@@ -18,6 +18,9 @@ struct ContentView: View {
             }
             ForEach(viewModel.entries) {
                 Text($0.title)
+                Text($0.entry)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
         }
     }
