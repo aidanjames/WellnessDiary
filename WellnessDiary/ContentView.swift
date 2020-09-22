@@ -8,10 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Button(action: { viewModel.createMockEntries() }) {
+                Text("Add entry")
+            }
+            ForEach(viewModel.entries) {
+                Text($0.title)
+            }
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
