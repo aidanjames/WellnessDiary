@@ -9,18 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = ViewModel()
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack {
+        List {
             Button(action: { viewModel.createMockEntries() }) {
                 Text("Add entry")
             }
-            ForEach(viewModel.entries) {
-                Text($0.title)
-                Text($0.entry)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+            VStack(alignment: .leading) {
+                ForEach(viewModel.entries) {
+                    Text($0.title)
+                    Text($0.entry)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
         }
     }
@@ -29,6 +31,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ViewModel())
     }
 }
