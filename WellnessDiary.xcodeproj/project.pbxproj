@@ -15,6 +15,8 @@
 		3D3F9145251A5BF0000DEFD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3F9144251A5BF0000DEFD3 /* Preview Assets.xcassets */; };
 		3D3F914F251A5D69000DEFD3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F914E251A5D69000DEFD3 /* Entry.swift */; };
 		3D3F9152251A5DEB000DEFD3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F9151251A5DEB000DEFD3 /* ViewModel.swift */; };
+		3DCB39A6251D148000584A96 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39A5251D148000584A96 /* PersistenceManager.swift */; };
+		3DCB39AA251D156000584A96 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB39A9251D156000584A96 /* FileManager+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3D3F9146251A5BF0000DEFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D3F914E251A5D69000DEFD3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		3D3F9151251A5DEB000DEFD3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3DCB39A5251D148000584A96 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		3DCB39A9251D156000584A96 /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 				3D3F913D251A5BF0000DEFD3 /* WellnessDiaryApp.swift */,
 				3DFF70AF251BC9CC00058F61 /* Views */,
 				3D3F914D251A5D57000DEFD3 /* Model */,
+				3DCB39A4251D146700584A96 /* Helpers */,
 				3D3F9141251A5BF0000DEFD3 /* Assets.xcassets */,
 				3D3F9146251A5BF0000DEFD3 /* Info.plist */,
 				3D3F9143251A5BF0000DEFD3 /* Preview Content */,
@@ -85,6 +90,15 @@
 				3D3F9151251A5DEB000DEFD3 /* ViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3DCB39A4251D146700584A96 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB39A5251D148000584A96 /* PersistenceManager.swift */,
+				3DCB39A9251D156000584A96 /* FileManager+Ext.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3DFF70AF251BC9CC00058F61 /* Views */ = {
@@ -167,11 +181,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D2321B0251BCC6B00E635FC /* NewEntryView.swift in Sources */,
+				3DCB39A6251D148000584A96 /* PersistenceManager.swift in Sources */,
 				3D3F914F251A5D69000DEFD3 /* Entry.swift in Sources */,
 				3D3F9140251A5BF0000DEFD3 /* ContentView.swift in Sources */,
 				3D3F9152251A5DEB000DEFD3 /* ViewModel.swift in Sources */,
 				3D3F913E251A5BF0000DEFD3 /* WellnessDiaryApp.swift in Sources */,
 				3D2321AD251BCBEF00E635FC /* ExistingEntryView.swift in Sources */,
+				3DCB39AA251D156000584A96 /* FileManager+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

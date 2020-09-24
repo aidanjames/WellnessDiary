@@ -10,16 +10,23 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel: ViewModel
+    @State private var showingAddEntry = false
     
     var body: some View {
         List {
-            Button(action: { viewModel.createMockEntries() }) {
+            Button(action: {
+                showingAddEntry.toggle()
+            }) {
                 Text("Add entry")
+                    .foregroundColor(.blue)
+            }
+            .sheet(isPresented: $showingAddEntry) {
+                NewEntryView(viewModel: viewModel)
             }
             VStack(alignment: .leading) {
-                ForEach(viewModel.entries) {
-                    Text($0.title)
-                    Text($0.entry)
+                ForEach(viewModel.entries) { entry in
+                    Text(entry.title)
+                    Text(entry.entry)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }

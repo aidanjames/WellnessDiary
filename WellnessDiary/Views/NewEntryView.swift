@@ -12,6 +12,7 @@ struct NewEntryView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var title: String = ""
     @State private var bodyText: String = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -19,6 +20,7 @@ struct NewEntryView: View {
                 Spacer()
                 Button("Done") {
                     viewModel.addNewEntry(date: Date(), title: title, entry: bodyText)
+                    presentationMode.wrappedValue.dismiss()
                 }
                 .padding(.horizontal)
             }

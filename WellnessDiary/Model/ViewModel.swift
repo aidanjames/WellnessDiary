@@ -33,11 +33,11 @@ class ViewModel: ObservableObject {
     
     
     func saveEntries() {
-        //TODO: Add persistence
+        PersistenceManager.shared.save(entries: entries)
     }
     
     
     func loadEntries() {
-        //TODO: Fetch saved entries
+        entries = PersistenceManager.shared.fetchEntries()
     }
 }
