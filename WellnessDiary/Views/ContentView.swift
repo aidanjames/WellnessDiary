@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text("Add entry")
                     .foregroundColor(.blue)
             }
-            .sheet(isPresented: $showingAddEntry) {
+            .fullScreenCover(isPresented: $showingAddEntry) {
                 NewEntryView(viewModel: viewModel)
             }
             VStack(alignment: .leading) {
