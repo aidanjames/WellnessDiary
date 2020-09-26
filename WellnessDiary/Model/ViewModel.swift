@@ -8,7 +8,11 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published var entries: [Entry] = []
+    @Published var entries: [Entry] = [] {
+        didSet {
+            saveEntries()
+        }
+    }
     
     init() {
         loadEntries()
@@ -28,7 +32,6 @@ class ViewModel: ObservableObject {
     func addNewEntry(date: Date?, title: String?, entry: String) {
         let newEntry = Entry(date: date ?? Date(), title: title ?? "Unknown", entry: entry)
         entries.append(newEntry)
-        saveEntries()
     }
     
     

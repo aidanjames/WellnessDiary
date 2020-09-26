@@ -13,27 +13,36 @@ struct ContentView: View {
     @State private var showingAddEntry = false
     
     var body: some View {
-        List {
-            Button(action: {
-                showingAddEntry.toggle()
-            }) {
-                Text("Add entry")
-                    .foregroundColor(.blue)
+        NavigationView {
+            List {
+                VStack(alignment: .leading) {
+                    ForEach(viewModel.entries) { entry in
+                        Text(entry.title)
+                        Text(entry.entry)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    .onDelete(perform: delete)
+                }
+                .fullScreenCover(isPresented: $showingAddEntry) {
+                    NewEntryView(viewModel: viewModel)
+                }
             }
-            .fullScreenCover(isPresented: $showingAddEntry) {
-                NewEntryView(viewModel: viewModel)
-            }
-            VStack(alignment: .leading) {
-                ForEach(viewModel.entries) { entry in
-                    Text(entry.title)
-                    Text(entry.entry)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+            .navigationTitle(Text("Wellness diary"))
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Add") {
+                        showingAddEntry.toggle()
+                    }
                 }
             }
         }
+        
     }
     
+    func delete(at offsets: IndexSet) {
+        viewModel.entries.remove(atOffsets: offsets)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
