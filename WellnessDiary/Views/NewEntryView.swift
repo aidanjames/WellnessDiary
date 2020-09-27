@@ -14,7 +14,6 @@ struct NewEntryView: View {
     @State private var bodyText: String = ""
     @Environment(\.presentationMode) var presentationMode
     
-    
     var doneButtonDisabled: Bool {
         title.isEmpty && bodyText.isEmpty
     }
@@ -33,7 +32,7 @@ struct NewEntryView: View {
             }
             .navigationTitle(Text("Add entry"))
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
                         viewModel.addNewEntry(date: Date(), title: title, entry: bodyText)
                         presentationMode.wrappedValue.dismiss()
@@ -45,7 +44,6 @@ struct NewEntryView: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
-
             }
         }
     }

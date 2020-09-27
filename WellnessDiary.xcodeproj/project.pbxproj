@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D2321AD251BCBEF00E635FC /* ExistingEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2321AC251BCBEF00E635FC /* ExistingEntryView.swift */; };
 		3D2321B0251BCC6B00E635FC /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2321AF251BCC6B00E635FC /* NewEntryView.swift */; };
+		3D34E7F92521157500D57B2E /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34E7F82521157500D57B2E /* EntryListView.swift */; };
 		3D3F913E251A5BF0000DEFD3 /* WellnessDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F913D251A5BF0000DEFD3 /* WellnessDiaryApp.swift */; };
 		3D3F9140251A5BF0000DEFD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F913F251A5BF0000DEFD3 /* ContentView.swift */; };
 		3D3F9142251A5BF0000DEFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3F9141251A5BF0000DEFD3 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3D2321AC251BCBEF00E635FC /* ExistingEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingEntryView.swift; sourceTree = "<group>"; };
 		3D2321AF251BCC6B00E635FC /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
+		3D34E7F82521157500D57B2E /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 		3D3F913A251A5BF0000DEFD3 /* WellnessDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellnessDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3F913D251A5BF0000DEFD3 /* WellnessDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessDiaryApp.swift; sourceTree = "<group>"; };
 		3D3F913F251A5BF0000DEFD3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				3D3F913F251A5BF0000DEFD3 /* ContentView.swift */,
 				3D2321AC251BCBEF00E635FC /* ExistingEntryView.swift */,
 				3D2321AF251BCC6B00E635FC /* NewEntryView.swift */,
+				3D34E7F82521157500D57B2E /* EntryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				3D3F914F251A5D69000DEFD3 /* Entry.swift in Sources */,
 				3D3F9140251A5BF0000DEFD3 /* ContentView.swift in Sources */,
 				3D3F9152251A5DEB000DEFD3 /* ViewModel.swift in Sources */,
+				3D34E7F92521157500D57B2E /* EntryListView.swift in Sources */,
 				3D3F913E251A5BF0000DEFD3 /* WellnessDiaryApp.swift in Sources */,
 				3D2321AD251BCBEF00E635FC /* ExistingEntryView.swift in Sources */,
 				3DCB39AA251D156000584A96 /* FileManager+Ext.swift in Sources */,

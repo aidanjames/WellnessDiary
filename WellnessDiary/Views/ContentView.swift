@@ -11,19 +11,21 @@ struct ContentView: View {
     
     @ObservedObject var viewModel: ViewModel
     @State private var showingAddEntry = false
+    @State private var showingViewExistingEntry = false
     
     var body: some View {
         NavigationView {
             List {
-                VStack(alignment: .leading) {
-                    ForEach(viewModel.entries) { entry in
-                        Text(entry.title)
-                        Text(entry.entry)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                    .onDelete(perform: delete)
+                ForEach(viewModel.entries) { entry in
+                    EntryListView(entry: entry)
+                        .onTapGesture {
+                            showingViewExistingEntry.toggle()
+                        }
+                        .sheet(isPresented: $showingViewExistingEntry) {
+                            ExistingEntryView(entry: entry)
+                        }
                 }
+                .onDelete(perform: delete)
                 .fullScreenCover(isPresented: $showingAddEntry) {
                     NewEntryView(viewModel: viewModel)
                 }

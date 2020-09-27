@@ -10,14 +10,22 @@ import SwiftUI
 struct ExistingEntryView: View {
     
     var entry: Entry
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack {
-            Text(entry.title)
-                .font(.largeTitle)
-                .bold()
-            Text(entry.entry)
-                .font(.body)
+        NavigationView {
+            VStack {
+                Text(entry.entry)
+                    .font(.body)
+            }
+            .navigationTitle(Text(entry.title))
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
         }
     }
 }
