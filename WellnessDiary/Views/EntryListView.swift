@@ -12,12 +12,13 @@ struct EntryListView: View {
     var entry: Entry
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(entry.title)
             Text(entry.entry)
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
+        .background(Color.blue)
     }
 }
 

@@ -12,6 +12,7 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var showingAddEntry = false
     @State private var showingViewExistingEntry = false
+    @State private var entryToShow: Entry?
     
     var body: some View {
         NavigationView {
@@ -19,7 +20,10 @@ struct ContentView: View {
                 ForEach(viewModel.entries) { entry in
                     EntryListView(entry: entry)
                         .onTapGesture {
-                            showingViewExistingEntry.toggle()
+                            showingViewExistingEntry = true
+                            print("What's up - you pressed the row for \(entry.title)")
+                            print("The showingViewExistingEntry value is \(showingViewExistingEntry ? "TRUE" : "FALSE")")
+                            entryToShow = entry
                         }
                         .sheet(isPresented: $showingViewExistingEntry) {
                             ExistingEntryView(entry: entry)
