@@ -18,7 +18,6 @@ struct EntryListView: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
-        .background(Color.blue)
     }
 }
 

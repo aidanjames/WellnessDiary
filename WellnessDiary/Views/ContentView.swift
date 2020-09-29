@@ -12,36 +12,44 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var showingAddEntry = false
     @State private var showingViewExistingEntry = false
-    @State private var entryToShow: Entry?
+    @State private var entryIndex = 0
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.entries) { entry in
+                    
                     EntryListView(entry: entry)
                         .onTapGesture {
-                            showingViewExistingEntry = true
-                            print("What's up - you pressed the row for \(entry.title)")
-                            print("The showingViewExistingEntry value is \(showingViewExistingEntry ? "TRUE" : "FALSE")")
-                            entryToShow = entry
+                            entryIndex = 2
+
+                            showingViewExistingEntry.toggle()
                         }
                         .sheet(isPresented: $showingViewExistingEntry) {
-                            ExistingEntryView(entry: entry)
+                            ExistingEntryView(entry: viewModel.entries[2])
                         }
+                    //                    NavigationLink(
+//                        destination: EntryListView(entry: entry),
+//                        label: {
+//                            EntryListView(entry: entry)
+//                        })
                 }
                 .onDelete(perform: delete)
-                .fullScreenCover(isPresented: $showingAddEntry) {
-                    NewEntryView(viewModel: viewModel)
-                }
+               
+
+            }
+            .fullScreenCover(isPresented: $showingAddEntry) {
+                NewEntryView(viewModel: viewModel)
             }
             .navigationTitle(Text("Wellness diary"))
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
                         showingAddEntry.toggle()
                     }
                 }
             }
+
         }
         
     }
