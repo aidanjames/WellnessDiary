@@ -18,25 +18,15 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.entries) { entry in
-                    
-                    EntryListView(entry: entry)
-                        .onTapGesture {
-                            entryIndex = 2
-
-                            showingViewExistingEntry.toggle()
-                        }
-                        .sheet(isPresented: $showingViewExistingEntry) {
-                            ExistingEntryView(entry: viewModel.entries[2])
-                        }
-                    //                    NavigationLink(
-//                        destination: EntryListView(entry: entry),
-//                        label: {
-//                            EntryListView(entry: entry)
-//                        })
+                    NavigationLink(
+                        destination: EntryListView(entry: entry),
+                        label: {
+                            EntryListView(entry: entry)
+                        })
                 }
                 .onDelete(perform: delete)
-               
-
+                
+                
             }
             .fullScreenCover(isPresented: $showingAddEntry) {
                 NewEntryView(viewModel: viewModel)
@@ -49,7 +39,7 @@ struct ContentView: View {
                     }
                 }
             }
-
+            
         }
         
     }
