@@ -13,20 +13,13 @@ struct ExistingEntryView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
-            VStack {
+//        NavigationView {
+            Form {
                 Text(entry.entry)
                     .font(.body)
             }
             .navigationTitle(Text(entry.title))
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }
-            }
-        }
+//        }
     }
 }
 

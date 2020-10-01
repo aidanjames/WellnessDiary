@@ -17,6 +17,7 @@ struct EntryListView: View {
             Text(entry.entry)
                 .font(.caption)
                 .foregroundColor(.secondary)
+                .lineLimit(1)
         }
     }
 }

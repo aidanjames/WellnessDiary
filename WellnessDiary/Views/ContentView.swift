@@ -24,9 +24,7 @@ struct ContentView: View {
                             EntryListView(entry: entry)
                         })
                 }
-                .onDelete(perform: delete)
-                
-                
+                .onDelete(perform: delete)                
             }
             .fullScreenCover(isPresented: $showingAddEntry) {
                 NewEntryView(viewModel: viewModel)
