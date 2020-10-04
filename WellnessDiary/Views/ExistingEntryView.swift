@@ -13,13 +13,15 @@ struct ExistingEntryView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-//        NavigationView {
-            Form {
-                Text(entry.entry)
-                    .font(.body)
+        VStack {
+            Text(entry.entry)
+                .font(.body)
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(entry.title)
             }
-            .navigationTitle(Text(entry.title))
-//        }
+        }
     }
 }
 

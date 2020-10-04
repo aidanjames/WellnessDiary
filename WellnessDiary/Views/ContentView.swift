@@ -19,7 +19,7 @@ struct ContentView: View {
             List {
                 ForEach(viewModel.entries) { entry in
                     NavigationLink(
-                        destination: EntryListView(entry: entry),
+                        destination: ExistingEntryView(entry: entry),
                         label: {
                             EntryListView(entry: entry)
                         })
